@@ -46,6 +46,26 @@ async function getUrlByCategory(url, title) {
                 allPageObj.allPage(fullLink, title)
             }
         })
+        $('div[class="sout-jobs-wrapper"]').each((index, element) => {
+            let linkSelect = $(element)
+            for (let i = 0; i < linkSelect.length; i++) {
+
+                let getLink = $(linkSelect[i]).attr('onclick').split("'")[1]
+                let fullLink = "https://jobs.bdjobs.com/jobdetails.asp?" + getLink;
+
+                allPageObj.allPage(fullLink, title)
+            }
+        })
+        $('div[class="row featured-wrap"]').each((index, element) => {
+            let linkSelect = $(element)
+            for (let i = 0; i < linkSelect.length; i++) {
+
+                let getLink = $(linkSelect[i]).attr('onclick').split("'")[1]
+                let fullLink = "https://jobs.bdjobs.com/jobdetails.asp?" + getLink;
+
+                allPageObj.allPage(fullLink, title)
+            }
+        })
     } catch (error) {
         console.log(error)
     }
